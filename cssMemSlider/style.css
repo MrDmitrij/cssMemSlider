@@ -12,8 +12,9 @@
   }
   
   .all {
-    width: 80rem;
+    max-width: 80rem;
     margin: 5% auto;
+    padding: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -25,40 +26,45 @@
   
   .slides {
     width: 100%;
-    height: 40rem;
     overflow: hidden;
   }
   
-  .image {
+  .images {
     display: flex;
-    width: 400rem;
+    width: 500%;
     transition: all 0.8s;
   }
-  
-  img {
-    width: 80rem;
+
+  .image {
+    width: 100%;
     height: 40rem;
   }
   
-  #switch1:checked ~ .slides .image {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  
+  #switch1:checked ~ .slides .images {
     margin-left: 0;
   }
-  #switch2:checked ~ .slides .image {
+  #switch2:checked ~ .slides .images {
     margin-left: -100%;
   }
-  #switch3:checked ~ .slides .image {
+  #switch3:checked ~ .slides .images {
     margin-left: -200%;
   }
-  #switch4:checked ~ .slides .image {
+  #switch4:checked ~ .slides .images {
     margin-left: -300%;
   }
-  #switch5:checked ~ .slides .image {
+  #switch5:checked ~ .slides .images {
     margin-left: -400%;
   }
   
   .text_mems {
     width: 40rem;
-    height: 5rem;
+    height: 10rem;
     overflow: hidden;
   }
   
@@ -105,7 +111,7 @@
     text-align: center;
     width: 4rem;
     height: 4rem;
-    /*line-height: 3.52rem;*/
+    line-height: 3.52rem;
     cursor: pointer;
   }
   
@@ -146,4 +152,50 @@
   #switch4:active ~ .controls #label4 span:hover,
   #switch5:active ~ .controls #label5 span:hover {
     background-color: rgb(207, 206, 206);
+  }
+
+  @media (max-width: 55rem) {
+
+    .image {
+      height: 45vw;
+    }
+
+    .text_mems {
+        width: 35rem;
+    }
+
+    .text {
+        font-size: 3vw;
+    }
+
+    label {
+        width: 3rem;
+        height: 3rem;
+        line-height: 2.8rem;
+    }
+
+    span {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+  }
+
+  @media (max-width: 35rem) {
+
+    .all {
+      justify-content: center;
+    }
+  
+    .text_mems {
+      width: 100%;
+      order: 2;
+    }
+    .controls {
+      order: 1;
+    }
+  
+    .text {
+      padding: 0;
+      font-size: 1.8rem;
+    }
   }
