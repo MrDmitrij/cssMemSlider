@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 62,5%;
+  }
+  
+  body {
+    background-color: #25282a;
+  }
+  
+  .all {
+    width: 80rem;
+    margin: 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .all > input {
+    display: none;
+  }
+  
+  .slides {
+    width: 100%;
+    height: 40rem;
+    overflow: hidden;
+  }
+  
+  .image {
+    display: flex;
+    width: 400rem;
+    transition: all 0.8s;
+  }
+  
+  img {
+    width: 80rem;
+    height: 40rem;
+  }
+  
+  #switch1:checked ~ .slides .image {
+    margin-left: 0;
+  }
+  #switch2:checked ~ .slides .image {
+    margin-left: -100%;
+  }
+  #switch3:checked ~ .slides .image {
+    margin-left: -200%;
+  }
+  #switch4:checked ~ .slides .image {
+    margin-left: -300%;
+  }
+  #switch5:checked ~ .slides .image {
+    margin-left: -400%;
+  }
+  
+  .text_mems {
+    width: 40rem;
+    height: 5rem;
+    overflow: hidden;
+  }
+  
+  .text_mems_wrapper {
+    width: 500%;
+    display: flex;
+    transition: all 0.8s;
+  }
+  
+  #switch1:checked ~ .text_mems .text_mems_wrapper {
+    margin-left: 0;
+  }
+  
+  #switch2:checked ~ .text_mems .text_mems_wrapper {
+    margin-left: -100%;
+  }
+  
+  #switch3:checked ~ .text_mems .text_mems_wrapper {
+    margin-left: -200%;
+  }
+  
+  #switch4:checked ~ .text_mems .text_mems_wrapper {
+    margin-left: -300%;
+  }
+  
+  #switch5:checked ~ .text_mems .text_mems_wrapper {
+    margin-left: -400%;
+  }
+  
+  .text {
+    width: 100%;
+    font-size: 3rem;
+    padding: 2rem 0;
+    color: #fff;
+  }
+  
+  .controls {
+    margin: 2rem 0;
+    display: flex;
+  }
+  
+  label {
+    display: inline-block;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    /*line-height: 3.52rem;*/
+    cursor: pointer;
+  }
+  
+  span {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: #71abfe;
+  }
+  
+  label:hover span {
+    background-color: #fff;
+  }
+  
+  #switch1:checked ~ .controls #label1 span,
+  #switch2:checked ~ .controls #label2 span,
+  #switch3:checked ~ .controls #label3 span,
+  #switch4:checked ~ .controls #label4 span,
+  #switch5:checked ~ .controls #label5 span {
+    background-color: transparent;
+    border: 0.2rem solid #71abfe;
+  }
+  
+  #switch1:checked ~ .controls #label1:hover span,
+  #switch2:checked ~ .controls #label2:hover span,
+  #switch3:checked ~ .controls #label3:hover span,
+  #switch4:checked ~ .controls #label4:hover span,
+  #switch5:checked ~ .controls #label5:hover span {
+    border-color: #fff;
+  }
+  
+  #switch1:active ~ .controls #label1 span:hover,
+  #switch2:active ~ .controls #label2 span:hover,
+  #switch3:active ~ .controls #label3 span:hover,
+  #switch4:active ~ .controls #label4 span:hover,
+  #switch5:active ~ .controls #label5 span:hover {
+    background-color: rgb(207, 206, 206);
+  }
